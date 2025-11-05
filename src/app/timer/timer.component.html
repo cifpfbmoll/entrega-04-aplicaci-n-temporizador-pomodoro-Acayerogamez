@@ -1,0 +1,13 @@
+<div class="timer-card">
+  <h1>Temporizador Pomodoro</h1>
+  <div class="timer-display">
+    <span>{{ minutes() | number: '2.0' }}</span>
+    <span>:</span>
+    <span>{{ seconds() | number: '2.0' }}</span>
+  </div>
+  <div class="timer-controls">
+    <button *ngIf="status() !== 'running'" (click)="startTimer()">Iniciar</button>
+    <button *ngIf="status() === 'running'" (click)="pauseTimer()">Pausar</button>
+    <button (click)="stopTimer()">Detener</button>
+  </div>
+</div>
